@@ -1,0 +1,15 @@
+<h2><%= @sub.title %></h2>
+<h3><%= @sub.description %></h3>
+<label>Moderated by: <%= @sub.moderator.username %></label>
+
+<%= link_to "Make Post", new_sub_post_url(@sub) %>
+<br>
+<%= link_to "Back", subs_url %>
+
+<ul>
+  <% @sub.posts.each do |post| %>
+    <li>
+      <%= link_to post.title, post_url(post) %>
+    </li>
+  <% end %>
+</ul>
